@@ -1,0 +1,20 @@
+warn: 5/29/2025 23:38:57.050 SqlServerEventId.DecimalTypeDefaultWarning[30000] (Microsoft.EntityFrameworkCore.Model.Validation) 
+      No store type was specified for the decimal property 'Balance' on entity type 'Wallet'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+info: 5/29/2025 23:38:57.334 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.11' with options: None
+info: 5/29/2025 23:38:59.092 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (90ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Wallets] ([Balance], [Holder])
+      VALUES (@p0, @p1);
+      SELECT [Id]
+      FROM [Wallets]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: 5/29/2025 23:38:59.160 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      INSERT INTO [Wallets] ([Balance], [Holder])
+      VALUES (@p0, @p1);
+      SELECT [Id]
+      FROM [Wallets]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
