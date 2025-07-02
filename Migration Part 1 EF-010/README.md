@@ -20,7 +20,7 @@ Use MetigatorAcademy;
 
 </div>
 
-``` sql
+``` sql 
 
 -- Courses Table
 CREATE TABLE Courses (
